@@ -1,0 +1,36 @@
+const main_url = "https://api.themoviedb.org/3";
+const api_key = "api_key=36d82ad03d63de894682d8510d844053";
+const img_url = "https://image.tmdb.org/t/p/w200";
+
+const popular = main_url+'/tv/popular?'+api_key
+
+const cardsWrapper = document.getElementById("cards__wrapper")
+
+function cardsApi(url){
+  fetch(url)
+  .then((res) => res.json())
+  .then((data) => {popularCard(data.results);
+  });
+  console.log(cardsApi);
+}
+function popularCard(data) {
+  console.log(data)
+  
+}
+popularCard(popular)
+
+for (let i = 0; i < 20; i++) {
+    cardsWrapper.innerHTML +=  `<div id="populr__cards">
+    <div class="card">
+ <div class="card__img">    
+  <i class="fa-solid fa-ellipsis options__menu"></i>
+ </div>
+ <div class="card__info">
+<b> <p class="card__title">title</p></b>
+ <p id="date_popular">data 1.2.3</p>
+</div>
+</div>
+  </div>
+</div>
+</div>`   
+}
